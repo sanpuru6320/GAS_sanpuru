@@ -19,4 +19,5 @@ public:
 	virtual void HighlightActor() override;
 	virtual void UnHighlightActor() override;
 	
+	AEnemyCharacter();
 };
