@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "AbilitySystemComponent.h"
 #include "UObject/NoExportTypes.h"
-#include "AuraWidgetControlloer.generated.h"
+#include "AuraWidgetController.generated.h"
 
 class UAttributeSet;
 class UAbilitySystemComponent;
@@ -37,14 +37,14 @@ struct FWidgetControllerParams
  * 
  */
 UCLASS()
-class AURA_API UAuraWidgetControlloer : public UObject
+class AURA_API UAuraWidgetController : public UObject
 {
 	GENERATED_BODY()
 	
 public:
 	UFUNCTION(BlueprintCallable)
 	void SetWidgetControllerParams(const FWidgetControllerParams& WCParams);
-
+	virtual void BroadcastInitialValues();
 protected:
 
 	UPROPERTY(BlueprintReadOnly, Category="WidgetController")

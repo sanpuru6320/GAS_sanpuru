@@ -6,7 +6,7 @@
 
 #include "AbilitySystemComponent.h"
 #include "AbilitySystemInterface.h"
-#include "AbilitySystem/AurayAttributeSet.h"
+#include "AbilitySystem/AuraAttributeSet.h"
 #include "Components/SphereComponent.h"
 
 AAuraEffectActor::AAuraEffectActor()
@@ -26,9 +26,9 @@ void AAuraEffectActor::OnOverlap(UPrimitiveComponent* OverlappedComponent, AActo
 	//TODO: Change this to apply a Gameplay Effect. For now, using const_cast as a hack!
 	if (IAbilitySystemInterface* ASCInterface = Cast<IAbilitySystemInterface>(OtherActor))
 	{
-		const UAurayAttributeSet* AuraAttributeSet = Cast<UAurayAttributeSet>(ASCInterface->GetAbilitySystemComponent()->GetAttributeSet(UAurayAttributeSet::StaticClass()));
+		const UAuraAttributeSet* AuraAttributeSet = Cast<UAuraAttributeSet>(ASCInterface->GetAbilitySystemComponent()->GetAttributeSet(UAuraAttributeSet::StaticClass()));
 
-		UAurayAttributeSet* MutableAuraAttributeSet = const_cast<UAurayAttributeSet*>(AuraAttributeSet);
+		UAuraAttributeSet* MutableAuraAttributeSet = const_cast<UAuraAttributeSet*>(AuraAttributeSet);
 		MutableAuraAttributeSet->SetHealth(AuraAttributeSet->GetHealth() + 25.f);
 		Destroy();
 	}
