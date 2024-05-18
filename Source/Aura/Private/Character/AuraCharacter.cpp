@@ -37,6 +37,7 @@ void AAuraCharacter::OnRep_PlayerState()
 
 	// Init ability actor info for the Client
 	InitAbilityActorInfo();
+	AddCharacterAbilities();
 }
 
 int32 AAuraCharacter::GetPlayerLevel()
